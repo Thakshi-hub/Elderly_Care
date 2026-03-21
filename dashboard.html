@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Elderly Care – Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="brand">
+        <div class="brand-icon">EC</div>
+        <span class="brand-text">Elderly Care</span>
+      </div>
+      <nav class="topnav">
+        <a href="home.html" class="topnav-link">Home</a>
+        <a href="dashboard.html" class="topnav-link topnav-link--active">Dashboard</a>
+        <a href="contacts.html" class="topnav-link">Emergency Contacts</a>
+      </nav>
+    </div>
+    <div class="topbar-right">
+      
+      <a href="login.html" class="primary-btn small">Logout ⮞</a>
+    </div>
+  </header>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="brand-icon">EC</div>
+      <span class="brand-text">CareDash</span>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="sidebar-link sidebar-link--active">Dashboard</a>
+      <button class="sidebar-link sidebar-link--button activity-tab activity-tab--active" data-target="checklist">Checklist</button>
+      <button class="sidebar-link sidebar-link--button activity-tab" data-target="medication">Medication</button>
+      <button class="sidebar-link sidebar-link--button activity-tab" data-target="appointments">Appointments</button>
+      <button class="sidebar-link sidebar-link--button activity-tab" data-target="contacts">Contacts</button>
+      <a href="contacts.html" class="sidebar-link">Emergency Contacts</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="user-pill">
+        <div class="user-avatar">M</div>
+        <div class="user-meta">
+          <span class="user-name">Maathu</span>
+          <span class="user-role">Primary Caregiver</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="content content--with-sidebar">
+    <header class="page-header">
+      <div>
+        <h1>Daily Care Overview</h1>
+        <p class="muted">
+          Click an activity on the dashboard to switch the content dynamically.
+        </p>
+      </div>
+      <div class="page-header-actions">
+        <button class="ghost-btn small" data-action="history">View History</button>
+        <button class="primary-btn small" data-action="report">Generate Report</button>
+      </div>
+    </header>
+
+    <section class="card activity-switcher-card">
+      <header class="card-header">
+        <h2>Activities</h2>
+        <span class="badge" id="currentActivityBadge">Checklist</span>
+      </header>
+      <div class="activity-switcher">
+        <button class="ghost-btn small activity-chip activity-tab activity-tab--active" data-target="checklist">Daily Checklist</button>
+        <button class="ghost-btn small activity-chip activity-tab" data-target="medication">Medication</button>
+        <button class="ghost-btn small activity-chip activity-tab" data-target="appointments">Appointments</button>
+        <button class="ghost-btn small activity-chip activity-tab" data-target="contacts">Emergency Contacts</button>
+      </div>
+    </section>
+
+    <div class="layout">
+      <div class="layout-main">
+        <section class="card activity-panel activity-panel--active" id="panel-checklist">
+          <header class="card-header">
+            <h2>Daily Checklist</h2>
+            <span class="badge checklist-badge">50% Completed</span>
+          </header>
+
+          <div class="progress-bar">
+            <div class="progress-fill checklist-progress" style="width: 50%"></div>
+          </div>
+
+          <div class="grid grid--two checklist-grid">
+            <label class="check-card">
+              <input type="checkbox" class="checklist-item" checked />
+              <span>Blood Pressure Check</span>
+            </label>
+            <label class="check-card">
+              <input type="checkbox" class="checklist-item" checked />
+              <span>Morning Walk (15 mins)</span>
+            </label>
+            <label class="check-card">
+              <input type="checkbox" class="checklist-item" />
+              <span>Hydration: Glass 4 of 8</span>
+            </label>
+            <label class="check-card">
+              <input type="checkbox" class="checklist-item" />
+              <span>Glucose Test (Pre-Lunch)</span>
+            </label>
+          </div>
+        </section>
+
+        <section class="card activity-panel" id="panel-medication">
+          <header class="card-header">
+            <h2>Medication Reminders</h2>
+          </header>
+
+          <div class="med-new">
+            <h3 class="small-heading">Add New Medication</h3>
+            <div class="grid grid--three">
+              <label class="field small-field">
+                <span class="field-label small">Medication Name</span>
+                <input type="text" id="medName" placeholder="e.g. Lisinopril" />
+              </label>
+              <label class="field small-field">
+                <span class="field-label small">Dosage</span>
+                <input type="text" id="medDose" placeholder="e.g. 10mg" />
+              </label>
+              <button class="primary-btn small full" id="addMedicationBtn">+ Add Reminder</button>
+            </div>
+          </div>
+
+          <ul class="med-list" id="medList">
+            <li class="med-item">
+              <div>
+                <strong>Lisinopril</strong>
+                <p class="muted tiny">10mg · Daily · Next dose at 8:00 PM</p>
+              </div>
+              <button class="ghost-btn tiny mark-taken-btn">Mark Taken</button>
+            </li>
+
+            <li class="med-item med-item--success">
+              <div>
+                <strong>Metformin</strong>
+                <p class="muted tiny">500mg · Twice Daily · Taken at 8:15 AM</p>
+              </div>
+              <span class="status-pill success">Completed</span>
+            </li>
+
+            <li class="med-item">
+              <div>
+                <strong>Vitamin D3</strong>
+                <p class="muted tiny">2000 IU · Weekly · Next dose on Sunday</p>
+              </div>
+              <button class="ghost-btn tiny mark-taken-btn">Mark Taken</button>
+            </li>
+          </ul>
+        </section>
+
+        <section class="card activity-panel" id="panel-appointments">
+          <header class="card-header">
+            <h2>Appointments</h2>
+            <a href="#" class="link-btn tiny">View All</a>
+          </header>
+          <ul class="appt-list">
+            <li>
+              <span class="appt-date tiny muted">Tomorrow · 10:30 AM</span>
+              <p><strong>Dr. Sarah</strong></p>
+              <p class="muted tiny">Cardiology follow-up · St. Mary’s Health Plaza</p>
+            </li>
+            <li>
+              <span class="appt-date tiny muted">March 28 · 2:00 PM</span>
+              <p><strong>Vision Specialist</strong></p>
+              <p class="muted tiny">Routine Eye Exam</p>
+            </li>
+            <li>
+              <span class="appt-date tiny muted">April 02 · 9:00 AM</span>
+              <p><strong>Dentist Checkup</strong></p>
+              <p class="muted tiny">Cleaning and X-rays</p>
+            </li>
+          </ul>
+          <button class="ghost-btn full small" id="scheduleNewBtn">Schedule New</button>
+        </section>
+
+        <section class="card activity-panel" id="panel-contacts">
+          <header class="card-header">
+            <h2>Emergency Contacts</h2>
+          </header>
+          <div class="emergency-grid">
+            <div class="emergency-contact emergency-contact--light">
+              <p class="tiny muted">Primary Doctor</p>
+              <p class="contact-name">Dr. Janaky</p>
+              <p class="tiny muted">+94 753063788</p>
+              <button class="primary-btn full small contact-call-btn">Call</button>
+            </div>
+            <div class="emergency-contact emergency-contact--light">
+              <p class="tiny muted">Nearby Pharmacy</p>
+              <p class="contact-name">Downtown Pharmacy</p>
+              <p class="tiny muted">+94 9876543</p>
+              <button class="ghost-btn full small contact-call-btn">Call</button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="layout-side">
+        <section class="card quick-summary-card">
+          <header class="card-header">
+            <h2>Today Summary</h2>
+          </header>
+          <ul class="service-list">
+            <li><strong>Checklist</strong><p class="tiny muted">2 of 4 tasks completed</p></li>
+            <li><strong>Medication</strong><p class="tiny muted">2 reminders pending</p></li>
+            <li><strong>Appointments</strong><p class="tiny muted">1 appointment tomorrow</p></li>
+            <li><strong>Contacts</strong><p class="tiny muted">2 emergency contacts ready</p></li>
+          </ul>
+        </section>
+
+        <section class="card card--dark side-panel side-panel--active" id="side-checklist">
+          <header class="card-header">
+            <h2 class="card-title-light">Checklist Notes</h2>
+          </header>
+          <p class="tiny muted-light">Finish hydration and glucose test before lunch.</p>
+        </section>
+
+        <section class="card side-panel" id="side-medication">
+          <header class="card-header">
+            <h2>Medication Status</h2>
+          </header>
+          <p class="tiny muted">Two medications still need confirmation today.</p>
+        </section>
+
+        <section class="card side-panel" id="side-appointments">
+          <header class="card-header">
+            <h2>Upcoming Visit</h2>
+          </header>
+          <p class="tiny muted">Bring test reports for tomorrow’s cardiology follow-up.</p>
+        </section>
+
+        <section class="card side-panel" id="side-contacts">
+          <header class="card-header">
+            <h2>Emergency Info</h2>
+          </header>
+          <p class="tiny muted">In case of emergency, call the doctor first, then the nearby pharmacy if medicine is needed.</p>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

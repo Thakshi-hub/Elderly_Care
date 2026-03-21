@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Elderly Care – Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- topbar only -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="brand">
+       <span class="brand-text">Elderly Care</span>
+</div>
+      <nav class="topnav">
+        <a href="home.html" class="topnav-link topnav-link--active">Home</a>
+        <a href="dashboard.html" class="topnav-link">Dashboard</a>
+        <a href="contacts.html" class="topnav-link">Emergency Contacts</a>
+      </nav>
+    </div>
+    <div class="topbar-right">
+      <button class="ghost-btn small">Search contacts…</button>
+      <a href="login.html" class="primary-btn small">Logout ⮞</a>
+    </div>
+  </header>
+
+  <main class="content">
+    <header class="page-header">
+      <div>
+        <h1>Welcome to Elderly Care</h1>
+        <p class="muted">
+          Everything you need to manage your daily health and wellness in one place.
+        </p>
+      </div>
+    </header>
+
+    <h2 class="section-title">Daily Health Tips</h2>
+    <div class="grid grid--three">
+      <article class="card">
+        <h3>Stay Hydrated</h3>
+        <p class="muted small">
+          Drink at least 8 glasses of water daily for better energy and skin health.
+        </p>
+        <button class="ghost-btn full small">Read More</button>
+      </article>
+
+      <article class="card">
+        <h3>Morning Stretch</h3>
+        <p class="muted small">
+          Spend 5 minutes on light movement to wake up your joints and start your day.
+        </p>
+        <button class="ghost-btn full small" onclick="showStretch()">Read More</button>
+      </article>
+
+      <article class="card">
+        <h3>Healthy Eating</h3>
+        <p class="muted small">
+          Fuel your body with colorful, nutrient-rich fruits and vegetables every day.
+        </p>
+        <button class="ghost-btn full small">Read More</button>
+      </article>
+    </div>
+
+    <h2 class="section-title">Quick Actions</h2>
+    <div class="grid grid--three">
+      <article class="card">
+        <h3>Medication</h3>
+        <p class="muted small">Next: Vitamin D at 10:00 AM</p>
+        <button class="ghost-btn full small">Manage Meds</button>
+      </article>
+
+      <article class="card">
+        <h3>Checklist</h3>
+        <p class="muted small">3 of 5 tasks completed today</p>
+        <button class="ghost-btn full small">View Tasks</button>
+      </article>
+
+      <article class="card">
+        <h3>Appointments</h3>
+        <p class="muted small">Dr. Smith – Tomorrow, 2:00 PM</p>
+        <button class="ghost-btn full small">View Calendar</button>
+      </article>
+    </div>
+
+    <footer class="screen-footer">
+      <span>© 2024 Elderly Care. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="#" class="link-btn small">Privacy Policy</a>
+        <a href="#" class="link-btn small">Terms of Service</a>
+        <a href="#" class="link-btn small">Support</a>
+      </div>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

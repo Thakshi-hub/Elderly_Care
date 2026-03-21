@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Elderly Care – Contacts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="brand">
+        <div class="brand-icon">EC</div>
+        <span class="brand-text">Elderly Care</span>
+      </div>
+      <nav class="topnav">
+        <a href="home.html" class="topnav-link">Home</a>
+        <a href="dashboard.html" class="topnav-link">Dashboard</a>
+        <a href="contacts.html" class="topnav-link topnav-link--active">Emergency Contacts</a>
+      </nav>
+    </div>
+    <div class="topbar-right">
+      <button class="ghost-btn small">Search contacts…</button>
+      <a href="login.html" class="primary-btn small">Logout ⮞</a>
+    </div>
+  </header>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="brand-icon">EC</div>
+      <span class="brand-text">CareDash</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+      <a href="contacts.html" class="sidebar-link sidebar-link--active">Contacts</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="user-pill">
+        <div class="user-avatar">M</div>
+        <div class="user-meta">
+          <span class="user-name">Kaavya</span>
+          <span class="user-role">Primary Caregiver</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="content content--with-sidebar">
+    <header class="page-header">
+      <div>
+        <p class="breadcrumb tiny muted">Home › Contact</p>
+        <h1>Contact &amp; Services</h1>
+        <p class="muted">
+          Critical management for immediate care coordination and local emergency response mapping.
+        </p>
+      </div>
+      <button class="primary-btn">Call 911</button>
+    </header>
+
+    <div class="layout">
+      <div class="layout-main">
+        <!-- Add new emergency contact -->
+        <section class="card">
+          <header class="card-header">
+            <h2>Add New Emergency Contact</h2>
+          </header>
+
+          <div class="grid grid--two">
+            <label class="field small-field">
+              <span class="field-label small">Full Name</span>
+              <input type="text" placeholder="e.g. Kalai Nila" />
+            </label>
+            <label class="field small-field">
+              <span class="field-label small">Relationship</span>
+              <input type="text" placeholder="e.g. Daughter" />
+            </label>
+            <label class="field small-field">
+              <span class="field-label small">Primary Phone</span>
+              <input type="tel" placeholder="0212265089" />
+            </label>
+            <label class="field small-field">
+              <span class="field-label small">Secondary Phone</span>
+              <input type="tel" placeholder="+94 775348720" />
+            </label>
+          </div>
+
+          <div class="toggle-row">
+            <div>
+              <strong>Power of Attorney</strong>
+              <p class="muted tiny">
+                Does this contact have legal health authority?
+              </p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <button class="primary-btn full small">Save Contact</button>
+        </section>
+
+        <!-- Saved contacts -->
+        <section class="card">
+          <header class="card-header">
+            <h2>Saved Contacts</h2>
+            <span class="tiny muted">3 total contacts</span>
+          </header>
+
+          <div class="grid grid--two">
+            <article class="contact-card">
+              <div class="contact-pill">
+                <strong>Maathumai</strong>
+                <span class="tag">Daughter</span>
+                <span class="tag dark">POA</span>
+              </div>
+              <p class="tiny muted">+94 777033120</p>
+              <div class="contact-actions">
+                <button class="primary-btn tiny">Call</button>
+                <button class="ghost-btn tiny">Edit</button>
+              </div>
+            </article>
+
+            <article class="contact-card">
+              <div class="contact-pill">
+                <strong>Dr. Mayooran</strong>
+                <span class="tag">Primary Physician</span>
+              </div>
+              <p class="tiny muted">+94 762567677</p>
+              <div class="contact-actions">
+                <button class="primary-btn tiny">Call Office</button>
+                <button class="ghost-btn tiny">Edit</button>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right column -->
+      <aside class="layout-side">
+        <section class="card">
+          <header class="card-header">
+            <h2>Local Emergency Services</h2>
+            <span class="tiny muted"></span>
+          </header>
+          
+          <ul class="service-list">
+            <li>
+              <strong>City General Hospital</strong>
+              <p class="tiny muted">1.2 miles away · Emergency (24/7)</p>
+            </li>
+            <li>
+              <strong>Mother care</strong>
+              <p class="tiny muted">2.0 miles away</p>
+            </li>
+            <li>
+              <strong>Royal 24/7 Pharmacy</strong>
+              <p class="tiny muted"> 500m away</p>
+            </li>
+          </ul>
+          <button class="ghost-btn full small">View All Local Services</button>
+        </section>
+
+        <section class="card card--dark">
+          <h2 class="card-title-light">Safety Checklist</h2>
+          <ul class="safety-list">
+            <li>Update contacts every 6 months</li>
+            <li>Verify Power of Attorney docs are on file</li>
+            <li>Print a physical copy for the fridge</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <footer class="screen-footer">
+      <span>© 2024 Elderly Care Systems. Built for safety.</span>
+      <div class="footer-links">
+        <a href="#" class="link-btn small">Privacy Policy</a>
+        <a href="#" class="link-btn small">Terms of Service</a>
+        <a href="#" class="link-btn small">Support</a>
+      </div>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

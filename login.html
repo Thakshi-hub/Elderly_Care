@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Elderly Care – Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="login-body">
+  <main class="screen--centered">
+    <div class="login-logo">
+      <div class="brand-icon">EC</div>
+      <div class="brand-text big">Elderly Care</div>
+    </div>
+
+    
+
+    <section class="login-card">
+      <div class="login-card-header">
+        <div class="login-hero-image"></div>
+      </div>
+      <div class="login-card-body">
+        <h1>Welcome Back</h1>
+        <p class="muted">
+          Please log in to access your dashboard.
+        </p>
+
+        <!-- simple GET redirect to home.html -->
+        <form action="home.html" method="get">
+          <label class="field">
+            <span class="field-label">Email Address</span>
+            <div class="field-control">
+              <span class="field-icon">@</span>
+              <input type="email" name="email" placeholder="e.g., name@example.com" required />
+            </div>
+          </label>
+
+          <label class="field">
+            <div class="field-label-row">
+              <span class="field-label">Password</span>
+              <a href="#" class="link-btn small">Forgot?</a>
+            </div>
+            <div class="field-control">
+              <span class="field-icon">🔒</span>
+              <input type="password" id="password" placeholder="Enter your password" required />
+              <button type="button" class="icon-btn" data-toggle-password>👁</button>
+            </div>
+          </label>
+
+          <button class="primary-btn full" type="submit">Log In ⮞</button>
+        </form>
+
+        <p class="muted small center">
+          Don’t have an account?
+          <a href="#" class="link-btn small">Sign Up</a>
+        </p>
+      </div>
+
+      <footer class="login-footer">
+        <button class="ghost-btn small">Need assistance?</button>
+      </footer>
+    </section>
+
+    <footer class="screen-footer">
+      <span>© 2024 Elderly Care Management Systems. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="#" class="link-btn small">Privacy Policy</a>
+        <a href="#" class="link-btn small">Terms of Service</a>
+        <a href="#" class="link-btn small">Support</a>
+      </div>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
