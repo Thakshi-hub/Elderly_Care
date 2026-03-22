@@ -90,7 +90,7 @@ while ($row = $res->fetch_assoc()) $contacts[] = $row;
         <h1>Contact &amp; Services</h1>
         <p class="muted">Manage emergency contacts for immediate care coordination.</p>
       </div>
-      <a href="tel:911" class="primary-btn">Call 911</a>
+      
     </header>
 
     <div class="layout">
@@ -150,7 +150,7 @@ while ($row = $res->fetch_assoc()) $contacts[] = $row;
                   </div>
                   <p class="tiny muted"><?= htmlspecialchars($c['phone1']) ?></p>
                   <div class="contact-actions">
-                    <a href="tel:<?= htmlspecialchars($c['phone1']) ?>" class="primary-btn tiny" style="text-decoration:none;">Call</a>
+                    
                     <a href="contacts.php?delete=<?= $c['id'] ?>" class="ghost-btn tiny"
                        onclick="return confirm('Delete this contact?')">Delete</a>
                   </div>
@@ -162,14 +162,7 @@ while ($row = $res->fetch_assoc()) $contacts[] = $row;
       </div>
 
       <aside class="layout-side">
-        <section class="card">
-          <header class="card-header"><h2>Local Emergency Services</h2></header>
-          <ul class="service-list">
-            <li><strong>City General Hospital</strong><p class="tiny muted">1.2 miles · Emergency (24/7)</p></li>
-            <li><strong>Mother Care</strong><p class="tiny muted">2.0 miles away</p></li>
-            <li><strong>Royal 24/7 Pharmacy</strong><p class="tiny muted">500m away</p></li>
-          </ul>
-        </section>
+        
         <section class="card card--dark">
           <h2 class="card-title-light">Safety Checklist</h2>
           <ul class="safety-list">
