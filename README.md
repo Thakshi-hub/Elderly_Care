@@ -2,70 +2,70 @@
 
 A web application for managing elderly care — including medications, daily checklists, appointments, and emergency contacts.
 
-Built with: **HTML · CSS · JavaScript · PHP · MySQL**
+Built with: **HTML · CSS · JavaScript · PHP · MariaDB**
 
 ---
 
 ## Project Structure
 ```
 elderly_care/
-├── index.php               # Home page (protected)
-├── dashboard.php           # Main dashboard (protected)
-├── contacts.php            # Emergency contacts (protected)
-├── contact.php             # Contact/support form
-├── styles.css              # Global stylesheet
-├── app.js                  # Frontend JavaScript
-├── database.sql            # MySQL database dump
+├── index.php
+├── dashboard.php
+├── contacts.php
+├── contact.php
+├── styles.css
+├── app.js
+├── database.sql
 │
 ├── auth/
-│   ├── login.php           # User login
-│   ├── register.php        # User registration
-│   └── logout.php          # Session destroy & logout
+│   ├── login.php
+│   ├── register.php
+│   └── logout.php
 │
 ├── includes/
-│   ├── db.php              # Database connection
-│   └── functions.php       # Helper functions
+│   ├── db.php
+│   └── functions.php
 │
-└── assets/                 # Images used in CSS backgrounds
+└── assets/
 ```
 
 ---
 
 ## Setup Instructions
 
-### 1. Requirements
-- WAMP or XAMPP installed and running
-- PHP 7.4+
-- MySQL 5.7+
+### 1. What You Need
+- WAMP installed and running
+- PHP 8.0+
+- MariaDB 11.4+
 
 ### 2. Import the Database
 1. Open `http://localhost/phpmyadmin`
-2. Click **New** → name it `elderly_care` → **Create**
-3. Click the `elderly_care` database → go to **Import** tab
-4. Click **Choose File** → select `database.sql` → **Go**
+2. Log in with username `root` and no password, choose **MariaDB** as server
+3. Click **New** → name it `elderly_care` → **Create**
+4. Click the `elderly_care` database → go to **Import** tab
+5. Click **Choose File** → select `database.sql` → **Go**
 
 ### 3. Configure Database Connection
-Open `includes/db.php` and update if needed:
+Open `includes/db.php` and update with your details:
 ```php
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');   // your MySQL username
-define('DB_PASS', '');       // your MySQL password (blank by default in WAMP)
+define('DB_HOST', '127.0.0.1:3307');
+define('DB_USER', 'root');
+define('DB_PASS', '');
 define('DB_NAME', 'elderly_care');
 ```
 
 ### 4. Copy Project to WAMP
-Copy the entire `elderly_care/` folder to:
+Copy the entire project folder to:
 ```
 C:\wamp64\www\elderly_care\
 ```
 
 ### 5. Run the Project
-Open your browser and visit:
+Open your browser and go to:
 ```
 http://localhost/elderly_care/auth/register.php
 ```
-- Register a new account
-- Login → redirected to dashboard ✅
+Register an account, log in, and you will be taken to the dashboard.
 
 ---
 
@@ -73,33 +73,35 @@ http://localhost/elderly_care/auth/register.php
 
 | Feature | Description |
 |---|---|
-| User Registration | Sign up with username, email, hashed password |
+| User Registration | Sign up with username, email and a securely hashed password |
 | User Login / Logout | Session-based authentication |
-| Daily Checklist | Add and toggle daily health tasks |
-| Medication Reminders | Add medications, mark as taken |
-| Appointments | Schedule and view upcoming appointments |
-| Emergency Contacts | Add/delete contacts with POA support |
-| Contact Form | Submit support messages stored in DB |
+| Daily Checklist | Add and check off daily health tasks |
+| Medication Reminders | Add medications and mark them as taken |
+| Appointments | Schedule and view upcoming doctor visits |
+| Emergency Contacts | Add and delete contacts with POA support |
+| Contact Form | Send support messages which are saved to the database |
 
 ---
 
 ## Security
-- Passwords hashed with `password_hash()` (bcrypt)
-- All inputs sanitized with `htmlspecialchars()` and `strip_tags()`
-- Prepared statements used for all DB queries (prevents SQL injection)
-- Session-based authentication guards all protected pages
+
+- Passwords are hashed using bcrypt via `password_hash()`
+- All user inputs are sanitized to prevent XSS attacks
+- Prepared statements are used throughout to prevent SQL injection
+- All protected pages require an active login session
 
 ---
 
-## Evaluation Checklist (Phase 3)
-- [x] MySQL database set up locally
-- [x] Required tables created
+## Evaluation Checklist
+
+- [x] MariaDB database set up locally using WAMP
+- [x] All required tables created
 - [x] User registration with hashed passwords
 - [x] User login with session handling
 - [x] Logout functionality
 - [x] Contact form with database storage
 - [x] Frontend connected to PHP backend
-- [x] Proper folder structure
+- [x] Proper folder structure followed
 - [x] database.sql export included
 
 ---
